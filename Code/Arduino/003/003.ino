@@ -2,7 +2,7 @@
 
 Servo myservo;    // lid servo
 
-// serial vars:
+                  // serial vars:
 int var1;
 int var2;
 int var3;
@@ -200,9 +200,7 @@ void loop() {
           previousDriveMillis = currentMillis;            
         }
 
-        // *******************************
         // *** get home from the table ***
-        //********************************
 
         if (sw4 == 0 && location == 1) {
           myservo.write(140);   // close lid
@@ -327,11 +325,8 @@ void loop() {
           encoder1Pos = 0; 
           location = 0; // you are home
           previousDriveMillis = currentMillis;
-        }
-
-        // ************************
+        
         // *** drive to counter ***
-        // ************************
 
         if (sw2 == 0 && driveFlag3 == 0 && location == 0) {      // drive from home
           driveFlag3 = 1;
@@ -391,10 +386,7 @@ void loop() {
           location = 2;   // you are at the counter 
           previousDriveMillis = currentMillis;            
         }
-
-        // ********************************
         // *** go home from the counter ***
-        // ********************************
 
         if (sw4 == 0 && location == 2) {
           myservo.write(140);   // close lid
@@ -522,8 +514,6 @@ void loop() {
           analogWrite(5, 0);
           analogWrite(4, 0);
         }
-
-
 
         // *** wheel2 ***
 
